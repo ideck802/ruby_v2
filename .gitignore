@@ -1,3 +1,4 @@
 /__pycache__
-/config_files
-/key_files
+/key_files/credentials.json
+/key_files/credentials2.json
+/key_files/ruby-for-pc-0b5827d59846.json
