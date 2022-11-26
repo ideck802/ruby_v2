@@ -7,6 +7,8 @@ discord_channel_id = None
 
 translate_speech = None
 
+speech_text = None
+
 client = discord.Client(intents=discord.Intents.all())
 
 def discord_init(interperet_speech):
@@ -21,13 +23,13 @@ async def on_message(message):
     if (message.author == client.user):
         return
 
-    print('on_message content: ' + message.content + ', channel: ' + message.channel)
+    print('on_message content: ' + message.content + ', channel: ' + str(message.channel))
     print(message.content)
     translate_speech(message.content)
 
 @client.event
 async def on_ready():
-    print('Discord bot logged in as: ' + client.user.name + ', ' + client.user.id)
+    print('Discord bot logged in as: ' + client.user.name + ', ' + str(client.user.id))
     task_loop.start()
 
 @tasks.loop(seconds=10)
